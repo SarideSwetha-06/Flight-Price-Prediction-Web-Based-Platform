@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adventure - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="{% static 'main/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/animate.css' %}">
+   
+    <link rel="stylesheet" href="{% static 'main/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/magnific-popup.css' %}">
+ 
+    <link rel="stylesheet" href="{% static 'main/css/aos.css' %}">
+ 
+    <link rel="stylesheet" href="{% static 'main/css/ionicons.min.css' %}">
+ 
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/jquery.timepicker.css' %}">
+ 
+   
+    <link rel="stylesheet" href="{% static 'main/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+  </head>
+  <body>
+   
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'main_index' %}">Fly-High</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+ 
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item "><a href="{% url 'main_index' %}" class="nav-link">Home</a></li>
+            <li class="nav-item active"><a href="{% url 'main_about' %}" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="{% url 'main_admin_login' %}" class="nav-link">Admin</a></li>
+            <li class="nav-item"><a href="{% url 'main_user_login' %}" class="nav-link">User</a></li>
+            <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
+            <li class="nav-item"><a href="{% url 'main_contact' %}" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+   
+    <div class="hero-wrap js-fullheight" style="background-image: url('/static/main/images/b3.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-9 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="{% url 'main_index' %}">Home</a></span> <span>About</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">About Us</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="intro">
+              <h3><span>01</span> Travel</h3>
+              <p>Travel offers a break from routine, exposing you to new cultures and environments. Whether it's a nearby getaway or an international trip, it broadens horizons. Every journey enriches your understanding of the world.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="intro">
+              <h3><span>02</span> Experience</h3>
+              <p>The beauty of travel lies in the diversity of experiences. From thrilling adventures to leisurely exploration, every moment is a discovery. Immersing yourself in local customs brings personal growth and fulfillment.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="intro">
+              <h3><span>03</span> Relax</h3>
+              <p>Relaxation is essential, allowing you to escape and recharge. Whether on a beach or in nature, travel provides peace and serenity. It becomes a journey of restoration for both mind and spirit
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+   
+    <section class="ftco-about d-md-flex">
+      <div class="one-half img" style="background-image: url('/static/main/images/s1.jpg');"></div>
+      <div class="one-half ftco-animate">
+        <div class="heading-section ftco-animate ">
+          <h2 class="mb-4">Best flight fare</h2>
+        </div>
+        <div>
+          <p>Find unbeatable flight deals with our advanced price prediction tool. Using cutting-edge algorithms, we analyze market trends to forecast when prices will drop or rise. Our real-time alerts ensure you book at the perfect moment, maximizing savings. We scan fares from all major airlines to guarantee you get the lowest possible price. Whether you're planning months in advance or looking for last-minute deals, our platform helps you make smart booking decisions.
+            Take the guesswork out of finding affordable flights and let us guide you to the best offers. With our easy-to-use interface and precise predictions, saving money on your next trip has never been easier. Trust us to help you book at the right time and enjoy a seamless travel experience.</p>
+        </div>
+      </div>
+    </section>
+ 
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Adventure</h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Information</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">About Us</a></li>
+                <li><a href="#" class="py-2 d-block">Online enquiry</a></li>
+                <li><a href="#" class="py-2 d-block">Call Us</a></li>
+                <li><a href="#" class="py-2 d-block">General enquiries</a></li>
+                <li><a href="#" class="py-2 d-block">Booking Conditions</a></li>
+                <li><a href="#" class="py-2 d-block">Privacy and Policy</a></li>
+                <li><a href="#" class="py-2 d-block">Refund policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Experience</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Beach</a></li>
+                <li><a href="#" class="py-2 d-block">Adventure</a></li>
+                <li><a href="#" class="py-2 d-block">Wildlife</a></li>
+                <li><a href="#" class="py-2 d-block">Honeymoon</a></li>
+                <li><a href="#" class="py-2 d-block">Nature</a></li>
+                <li><a href="#" class="py-2 d-block">Party</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">Have a Questions?</h2>
+                <div class="block-23 mb-3">
+                  <ul>
+                    <li><span class="icon icon-map-marker"></span><span class="text">Surampalem,Andhra Pradesh</span></li>
+                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 6305125525</span></a></li>
+                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">swethasaride14@gmail.com</span></a></li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+ 
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved swethasride14@gmail.com | This template is Designed & Developed <i class="icon-heart" aria-hidden="true"></i> by <a href="https://codebook.in" target="_blank">koteswari in swetha</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+ 
+   
+ 
+ 
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+ 
+ 
+ 
+  <script src="{% static 'main/js/jquery.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'main/js/popper.min.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'main/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.stellar.min.j' %}s"></script>
+  <script src="{% static 'main/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'main/js/aos.js' %}"></script>
+  <script src="{% static 'main/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'main/js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'main/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'main/js/google-map.js' %}"></script>
+  <script src="{% static 'main/js/main.js' %}"></script>
+   
+  </body>
+</html>
+ 

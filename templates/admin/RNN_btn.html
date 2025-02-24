@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>FlyHigh Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'admin/vendors/feather/feather.css' %}">
+  <link rel="stylesheet" href="{% static 'admin/vendors/ti-icons/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'admin/vendors/css/vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{% static 'admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css' %}">
+  <link rel="stylesheet" href="{% static 'admin/vendors/ti-icons/css/themify-icons.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/js/select.dataTables.min.css' %}">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'admin/css/vertical-layout-light/style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'admin/images/favicon.png' %}" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <style>
+    .centered-button {
+    display: block;
+    margin: 20px auto; /* Centers the button horizontally */
+    padding: 10px 20px;
+    background-color: orange; /* Button color as per your preference */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.centered-button:hover {
+    background-color: darkorange; /* Hover effect */
+}
+
+  </style>
+
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="{% url 'admin_index' %}"><img src="{% static 'admin/images/pic.jpeg' %}" class="mr-2" alt="logo"/></a>
+
+        <a class="navbar-brand brand-logo-mini" href="{% url 'admin_index' %}"><img src="{% static 'admin/images/logo-mini.svg' %}" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+       
+        <ul class="navbar-nav navbar-nav-right">
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="icon-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+           
+          </li> -->
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <img src="{% static 'admin/images/faces/face28.jpg' %}" alt="profile"/>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <!-- <a class="dropdown-item">
+                <i class="ti-settings text-primary"></i>
+                Settings
+              </a> -->
+              <a class="dropdown-item" href="{% url 'main_index' %}">
+                <i class="ti-power-off text-primary" ></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <div id="right-sidebar" class="settings-panel">
+        <i class="settings-close ti-close"></i>
+        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="{% static 'admin/#todo-section' %}" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="chats-tab" data-toggle="tab" href="{% static 'admin/#chats-section' %}" role="tab" aria-controls="chats-section">CHATS</a>
+          </li>
+        </ul>
+      
+      </div>
+      <!-- partial -->
+<!-- partial:partials/_sidebar.html -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'admin_index' %}">
+        <i class="icon-grid menu-icon"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+
+    <!-- Dataset Section -->
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+        <i class="icon-columns menu-icon"></i>
+        <span class="menu-title">Data Set</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="form-elements">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="{% url 'admin_uploaddata' %}">Upload Data</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- Algorithms Section -->
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#algorithms" aria-expanded="false" aria-controls="algorithms">
+        <i class="icon-cog menu-icon"></i>
+        <span class="menu-title">Algorithms</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="algorithms">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="{% url 'GAN_alg' %}">Generate GAN</a></li>
+          <li class="nav-item"><a class="nav-link"  href="{% url 'RNN_alg' %}" >Generate RNN</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- Graph Analysis Section -->
+    
+  </ul>
+</nav>
+<!-- Main Content -->
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body text-center">
+            <h1 style="color: navy;">RNN Algorithm</h1>
+            <p>Click the button below to run the RNN algorithm and start processing the data.</p>
+            <form action="{% url 'RNN_btn' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <button type="submit" class="custom-button centered-button">Run Algorithm</button>
+              <table class="table table-bordered mt-4">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Metric</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mean Squared Error</td>
+                        <td>{{ i.Mean_Squared_Error }}</td>
+                    </tr>
+                    <tr>
+                        <td>Mean Absolute Error</td>
+                        <td>{{ i.Mean_Absolute_Error }}</td>
+                    </tr>
+                    <tr>
+                        <td>R2 Score</td>
+                        <td>{{ i.R2_Score }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+<!-- End of Main Content -->
+
+<!-- plugins:js -->
+<script src="{% static 'admin/vendors/js/vendor.bundle.base.js' %}"></script>
+<!-- inject:js -->
+<script src="{% static 'admin/js/off-canvas.js' %}"></script>
+<script src="{% static 'admin/js/hoverable-collapse.js' %}"></script>
+<script src="{% static 'admin/js/template.js' %}"></script>
+<script src="{% static 'admin/js/settings.js' %}"></script>
+<script src="{% static 'admin/js/todolist.js' %}"></script>
+<!-- endinject -->
+</body>
+</html>
