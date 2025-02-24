@@ -1,0 +1,2 @@
+# Flight Price Prediction Web Based Platform
+ LEVERAGING GENERATIVE-AI FOR REAL TIME AIRFARE FORECASTING
